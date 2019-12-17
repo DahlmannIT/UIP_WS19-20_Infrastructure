@@ -62,7 +62,7 @@ CREATE USER kafka_connect WITH PASSWORD 'kafka_connect';
 CREATE DATABASE kafka_connect;
 GRANT ALL PRIVILEGES ON DATABASE kafka_connect TO kafka_connect;
 ```
-and ./deploy-connectors.sh again!
+and `./deploy-connectors.sh` again!
 
 ## 2. Frameworks
 
@@ -86,7 +86,7 @@ and ./deploy-connectors.sh again!
 ### 3.1  Reading data
 
 To let Kafka read your data, just move it to the `data` folder. 
-Kafka will automatically process your data according to your schemes (in deploy-connector.sh).
+Kafka will automatically process your data according to your schemes (in `deploy-connector.sh`).
 
 If the data is parsed correctly, it will be moved to the `data/finish` folder, or else you can find your data in `data/error` directory. 
 

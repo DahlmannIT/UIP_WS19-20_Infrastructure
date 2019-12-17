@@ -5,38 +5,71 @@
 This documentation describes the infrastructure of a scalable data streaming and processing platform, which gives the possibility to persist and analyze incoming data from various types and sources. 
 
 1 [Getting started](#getting-started)
+
 1.1 [Introduction](#introduction)
+
 1.2 [Use Cases](#use-cases)
+
 1.3 [Prerequisites](#prerequisites)
+
 1.4 [Quick start](#quick-start)
+
 1.5 [Installation Guide](#installation-guide)
+
 2 [Frameworks](#frameworks)
+
 2.1 [Architecture](#architecture)
+
 2.2 [Documentation of Frameworks](#documentation-of-frameworks)
+
 3 [How to use](#how-to-use)
+
 3.1 [Reading data](#reading-data)
+
 3.2 [Make data persistable](#make-data-persistable)
+
 3.3 [Deploying Flink-Job](#deploying-flink-job)
+
 3.4 [Accessing PostgreSQL](#accessing-postgresql)
+
 3.5 [Exploring data with Zeppelin](#exploring-data-with-zeppelin)
+
 3.6 [Monitoring container status with Grafana](#monitoring-container-status-with-grafana)
+
 3.7 [Raw monitoring with Prometheus](#raw-monitoring-with-prometheus)
+
 4 [Developers](#developers)
+
 4.1 [docker-compose.yml](#docker-compose.yml)
+
 4.2 [Environment Variables](#environment-variables)
+
 4.2.1 [ZooKeeper](#zookeeper)
+
 4.2.2 [Kafka](#kafka)
+
 4.2.3 [Kafka-Connect](#kafka-connect)
+
 4.2.4 [PostgreSQL](#postgresql)
+
 4.2.5 [Jobmanager](#jobmanager)
+
 4.2.6 [Taskmanager](#taskmanager)
+
 4.2.7 [Prometheus](#prometheus)
+
 4.2.8 [Grafana](#grafana)
+
 4.3 [Connectors](#connectors)
+
 4.3.1 [Source-Connectors](#source-connectors)
+
 4.3.2 [Sink-Connectors](#sink-connectors)
+
 5 [KeyHashingJob](#keyhashingjob)
+
 6 [Troubleshooting](#troubleshooting)
+
 
 ## 1 Getting started
 

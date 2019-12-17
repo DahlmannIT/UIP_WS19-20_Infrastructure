@@ -4,6 +4,7 @@
 
 This documentation describes the infrastructure of a scalable data streaming and processing platform, which gives the possibility to persist and analyze incoming data from various types and sources. 
 
+### Table of Contents
 * 1 [Getting started](#getting-started)
 	* 1.1 [Introduction](#introduction)
 	* 1.2 [Use Cases](#use-cases)

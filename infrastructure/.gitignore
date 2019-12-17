@@ -1,0 +1,2 @@
+# ignore the postgres-data volume
+.docker-volumes/postgres-data

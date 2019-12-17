@@ -425,7 +425,7 @@ As for Grafana, see [Grafana Documentation](https://grafana.com/docs/grafana/lat
 
 #### <a name="source-connectors"></a> 4.3.1 Source-Connectors
 
-As you can see in `deploy-connector.sh` (TODO VERLINKUNG EINFÜGEN), we use the following **source-connectors** for: 
+As you can see in [`deploy-connector.sh`](https://github.com/DahlmannIT/UIP_WS19-20_Infrastructure/blob/master/infrastructure/deploy-connector.sh), we use the following **source-connectors** for: 
 
 * transaction_data 
   ```sh

@@ -16,7 +16,11 @@ The infrastructure consists of the distributed streaming-platform `Apache Kafka`
 
 ### 1.2 Use Cases
 
-As a 
+* As a data analyst, I want to have as much data as possible to have a good basis for analysis and prognosis.
+
+* As a developer, I want to be able to scale the environment to handle big amounts of incoming data.
+
+* As a developer, I want to stream and persist live data from various data sources into a database to create a sufficient foundation for my colleagues to work on.
 
 ### 1.3 Prerequisites
 

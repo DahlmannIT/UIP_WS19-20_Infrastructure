@@ -71,12 +71,12 @@ Perform the following two steps (required only once)
  * move a file called `transaction_data.csv` to the `data` directory to be able to deploy a connector (next step)
  
 
-In your terminal, navigate to `docker-compose.yml` file and start a cluster
+In your terminal, navigate to [`docker-compose.yml`](https://github.com/DahlmannIT/UIP_WS19-20_Infrastructure/blob/master/infrastructure/docker-compose.yml) file and start a cluster
 
  * `sudo docker-compose up`
  
  
-* execute the `deploy-connector.sh` file with 
+* execute the [`deploy-connector.sh`](https://github.com/DahlmannIT/UIP_WS19-20_Infrastructure/blob/master/infrastructure/deploy-connector.sh) file with 
     * `bash deploy-connector.sh` OR `./deploy-connector.sh`
 
 For destroying a cluster, type
@@ -121,7 +121,7 @@ and `./deploy-connectors.sh` again!
 
 ### <a name="reading-data"></a>3.1  Reading data
 
-To let Kafka read your data, just move it to the `data` folder. 
+To let Kafka read your data, just move it to the [`data`](https://github.com/DahlmannIT/UIP_WS19-20_Infrastructure/blob/master/infrastructure/data/) folder. 
 Kafka will automatically process your data according to your schemes (in `deploy-connector.sh`).
 
 If the data is parsed correctly, it will be moved to the `data/finish` folder, or else you can find your data in `data/error` directory. 

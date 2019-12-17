@@ -71,7 +71,7 @@ This documentation describes the infrastructure of a scalable data streaming and
 6 [Troubleshooting](#troubleshooting)
 
 
-## 1 Getting started
+## <a name="getting-started"></a>1 Getting started
 
 ### <a name="introduction"></a> 1.1 Introduction
 
@@ -131,13 +131,13 @@ GRANT ALL PRIVILEGES ON DATABASE kafka_connect TO kafka_connect;
 ```
 and `./deploy-connectors.sh` again!
 
-## 2 Frameworks
+## <a name="frameworks"></a>2 Frameworks
 
-### 2.1 Architecture
+### <a name="architecture"></a>2.1 Architecture
 
 ![Architektur 17.10.2019](/img/Architektur_17102019.svg)
 
-### 2.2 Documentation of Frameworks
+### <a name="documentation-of-frameworks"></a>2.2 Documentation of Frameworks
 
 [Apache Kafka](https://kafka.apache.org/documentation/)
 
@@ -148,9 +148,9 @@ and `./deploy-connectors.sh` again!
 [Apache Zeppelin](https://zeppelin.apache.org/docs/0.8.0/)
 
 
-## 3 How to use
+## <a name="how-to-use"></a>3 How to use
 
-### 3.1  Reading data
+### <a name="reading-data"></a>3.1  Reading data
 
 To let Kafka read your data, just move it to the `data` folder. 
 Kafka will automatically process your data according to your schemes (in `deploy-connector.sh`).
@@ -172,7 +172,7 @@ For adding a new data source, take the following steps:
     
 For adding a new data source, you have to take the following steps. Initially you have to create a new connector (.csv) scheme. Afterwards a new `InputFilePattern` has to be created. Finally you need to create a new topic inside the connector.
 
-### 3.2 Make data persistable
+### <a name="make-data-persistable"></a>3.2 Make data persistable
 
 * to persist data, we need a `PRIMARY KEY` for your data, therefore we let Flink do its wonders
 
@@ -187,13 +187,13 @@ To persist the data in the database you need a `PRIMARY KEY` for the data. Our s
 To make your own Flinkjob, check [Flink Hashing Job](https://github.com/DahlmannIT/UIP_WS19-20_Infrastructure/tree/master/Flink%20Hashing%20Job) for an example.
 
 
-### 3.3  Deploying Flink-Job
+### <a name="deploying-flink-job"></a>3.3  Deploying Flink-Job
  
 
 To deploy the Flink-Job you have to go to `localhost:8081` where the Flink GUI is accessible. Click the `Submit new Job`-button to upload and start the `KeyHashingJob.jar`. See the Flink examples below for a more detailed view of Flink-Jobs.
 If you can't access the Flink GUI, you can also deploy a Job in the Flink-Bash (called Jobmanager): `./bin/flink run <directory/name.jar>`.
 
-### 3.4 Accessing PostgreSQL
+### <a name="accessing-postgresql"></a>3.4 Accessing PostgreSQL
 
 Access the postgres-container bash
 
@@ -217,7 +217,7 @@ enter any `SQL`-commands, ending with a `;`
   
 In the terminal you have direct access to the PostgreSQL database within the postgres bash. To get access you have to use the command `docker exec -it postgres bash`. After that you need to connect to `psql` with the username: postgres and the password: postgres. The required command is `psql kafka_connect kafka_connect` (`psql <username> <password>`). To access your preferred database use the command `\c <database>`. In our example just `\c` is used. All tables can be printed with `\dt`. After these commands you can enter any `SQL`-commands e.g. `SELECT * FROM transaction_data_persist;`. The `;` at the end of your SQL-command should by no means be forgotten!
 
-### 3.5 Explore data with Zeppelin
+### <a name="exploring-data-with-zeppelin"></a>3.5 Explore data with Zeppelin
 
 * Fast Data Exploration on database via multiple interpreters
 
@@ -242,7 +242,7 @@ SELECT * FROM transaction_data_persist;
 Again, don´t forget the `;`.
 
 
-### 3.6 Monitoring container status with Grafana
+### <a name="monitoring-container-status-with-grafana"></a>3.6 Monitoring container status with Grafana
 
 * monitoring container-status, based on Prometheus
 
@@ -255,7 +255,7 @@ Again, don´t forget the `;`.
 
 * check out Home -> Kafka-Overview
 
-### 3.7 Raw monitoring with Prometheus
+### <a name="raw-monitoring-with-prometheus"></a>3.7 Raw monitoring with Prometheus
 
 Access Prometheus by visiting 
 
@@ -263,7 +263,7 @@ Access Prometheus by visiting
 
 
 
-## 4 Developers
+## <a name="developers"></a>4 Developers
 
 ### <a name="docker-compose.yml"></a> 4.1 docker-compose.yml
 
@@ -402,9 +402,9 @@ services:
       - "prometheus"
 ```
 
-### 4.2 Environment Variables
+### <a name="environment-variables"></a>4.2 Environment Variables
 
-#### 4.2.1 ZooKeeper
+#### <a name="zookeeper"></a>4.2.1 ZooKeeper
 
 The ZooKeeper image uses variables prefixed with `ZOOKEEPER_` with the variables expressed exactly as they would appear in the `zookeeper.properties` file. As an example: for `clientPort` and `tickTime`, you can use 
 
@@ -415,7 +415,7 @@ The ZooKeeper image uses variables prefixed with `ZOOKEEPER_` with the variables
 
 Please refer to [Confluent Documentation](https://docs.confluent.io/current/installation/docker/config-reference.html) for more details. 
 
-#### 4.2.2 Kafka
+#### <a name="kafka"></a>4.2.2 Kafka
 
 The Kafka image uses variables prefixed with `KAFKA_`. 
 See [Confluent Documentation](https://docs.confluent.io/current/installation/docker/config-reference.html).
@@ -424,35 +424,35 @@ See [Confluent Documentation](https://docs.confluent.io/current/installation/doc
 
 Kafka Connect is used for connecting various datatypes and schemas with Kafka. There are a lot of predefined source and sink connectors available. Please refer to [Confluent Kafka Connect Documentation](https://docs.confluent.io/current/connect/index.html) for more details. For a list of used connectors, refer to [Chapter 4.3 Connectors](#connectors).
 
-#### 4.2.4 PostgreSQL
+#### <a name="postgresql"></a>4.2.4 PostgreSQL
 
 The PostgreSQL database is used to persist analyzed and cleaned raw data and results.
 Please refer to [PostgreSQL Documentation](https://www.postgresql.org/docs/) for more details. 
 
-#### 4.2.5 Zeppelin
+#### <a name="zeppelin"></a>4.2.5 Zeppelin
 
 For configuring Zeppelin, make sure to expose port 8080 and overwrite the necessary volumes.
 See [Apache Zeppelin Documentation](https://zeppelin.apache.org/docs/0.7.0/install/docker.html) for a detailed view.
 
-#### 4.2.6 Jobmanager
+#### <a name="jobmanager"></a>4.2.6 Jobmanager
 
 This is the master-node of Apache Flink. You can deploy Flink-Jobs to this container. 
 See [Apache Flink Documentation](https://ci.apache.org/projects/flink/flink-docs-stable/) for more details.
 
-#### 4.2.7 Taskmanager
+#### <a name="taskmanager"></a>4.2.7 Taskmanager
 
 The Taskmanager is an image of Apache Flink, which use is to process Kafkas incoming data. 
 Please refer to [Apache Flink Documentation](https://ci.apache.org/projects/flink/flink-docs-stable/) for more details.
 
-#### 4.2.8 Prometheus
+#### <a name="prometheus"></a>4.2.8 Prometheus
 
 To get a list of possible Prometheus Environment Variables, see [Prometheus Documentation](https://prometheus.io/docs/introduction/overview/).
 
-#### 4.2.9 Grafana
+#### <a name="grafana"></a>4.2.9 Grafana
 
 As for Grafana, see [Grafana Documentation](https://grafana.com/docs/grafana/latest/installation/docker/).
 
-### 4.3  Connectors
+### <a name="connectors"></a>4.3  Connectors
 
 #### <a name="source-connectors"></a> 4.3.1 Source-Connectors
 
@@ -541,7 +541,7 @@ In our case, the Flink-Job `KeyHashingJob` reads data from the source connectors
     
 [JDBC Sink Connector Documentation](https://docs.confluent.io/3.1.1/connect/connect-jdbc/docs/sink_connector.html) can be found here.
 
-## 5 KeyHashingJob
+## <a name="keyhashingjob"></a>5 KeyHashingJob
 
 To get the Flink-Job started we need to give it some various meta data. In our example we use
 
@@ -590,7 +590,7 @@ After that the resulting JSON will be converted to string and written to the out
  ```
 
 
-## 6 Troubleshooting
+## <a name="troubleshooting"></a>6 Troubleshooting
 
 * If user `kafka_connect` doesn't exist in PostgreSQL, make sure to check `/.docker-volumes/postgres-init/init.sql` or create an user yourself.
 

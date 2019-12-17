@@ -68,7 +68,7 @@ The infrastructure consists of the distributed streaming-platform `Apache Kafka`
 
 Perform the following two steps (required only once)
 
- * move a file called `transaction_data.csv` to the `data` directory to be able to deploy a connector (next step)
+ * move a file called [`transaction_data.csv`](https://github.com/DahlmannIT/UIP_WS19-20_Infrastructure/blob/master/infrastructure/data/transaction_data.csv) to the [`data`](https://github.com/DahlmannIT/UIP_WS19-20_Infrastructure/blob/master/infrastructure/data/) directory to be able to deploy a connector (next step)
  
 
 In your terminal, navigate to [`docker-compose.yml`](https://github.com/DahlmannIT/UIP_WS19-20_Infrastructure/blob/master/infrastructure/docker-compose.yml) file and start a cluster

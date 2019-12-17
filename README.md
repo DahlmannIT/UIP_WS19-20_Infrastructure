@@ -6,15 +6,15 @@ This documentation describes the infrastructure of a scalable data streaming and
 
 1 [Getting started](#getting-started)
 
-	1.1 [Introduction](#introduction)
+1.1 [Introduction](#introduction)
 
-	1.2 [Use Cases](#use-cases)
+1.2 [Use Cases](#use-cases)
 
-	1.3 [Prerequisites](#prerequisites)
+1.3 [Prerequisites](#prerequisites)
 
-	1.4 [Quick start](#quick-start)
+1.4 [Quick start](#quick-start)
 
-	1.5 [Installation Guide](#installation-guide)
+1.5 [Installation Guide](#installation-guide)
 
 2 [Frameworks](#frameworks)
 
@@ -265,7 +265,7 @@ Access Prometheus by visiting
 
 ## 4 Developers
 
-### 4.1 docker-compose.yml
+### <a name="docker-compose.yml"></a> 4.1 docker-compose.yml
 
 ```yml
 version: '3'
@@ -420,7 +420,7 @@ Please refer to [Confluent Documentation](https://docs.confluent.io/current/inst
 The Kafka image uses variables prefixed with `KAFKA_`. 
 See [Confluent Documentation](https://docs.confluent.io/current/installation/docker/config-reference.html).
 
-#### 4.2.3 Kafka-Connect
+#### <a name="kafka-connect"></a> 4.2.3 Kafka-Connect
 
 Kafka Connect is used for connecting various datatypes and schemas with Kafka. There are a lot of predefined source and sink connectors available. Please refer to [Confluent Kafka Connect Documentation](https://docs.confluent.io/current/connect/index.html) for more details. For a list of used connectors, refer to [Chapter 4.3 Connectors](#connectors).
 
@@ -454,7 +454,7 @@ As for Grafana, see [Grafana Documentation](https://grafana.com/docs/grafana/lat
 
 ### 4.3  Connectors
 
-#### 4.3.1 Source-Connectors
+#### <a name="source-connectors"></a> 4.3.1 Source-Connectors
 
 As you can see in `deploy-connector.sh` (TODO VERLINKUNG EINFÜGEN), we use the following **source-connectors** for: 
 
@@ -510,7 +510,7 @@ As you can see in `deploy-connector.sh` (TODO VERLINKUNG EINFÜGEN), we use the 
 
   For a detailed view of this connector-class' configuration, check [SpoolDirConnector Documentation](https://docs.confluent.io/current/connect/kafka-connect-spooldir/index.html).
   
-#### 4.3.2 Sink-Connectors
+#### <a name="sink-connectors"></a> 4.3.2 Sink-Connectors
 
   For **sink-connectors** we use:
   

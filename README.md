@@ -474,11 +474,9 @@ In our case, the Flink-Job `KeyHashingJob` reads data from the source connectors
     
 [JDBC Sink Connector Documentation](https://docs.confluent.io/3.1.1/connect/connect-jdbc/docs/sink_connector.html) can be found here.
 
-## 5. Examples
+## 5. KeyHashingJob
 
-### 5.1 KeyHashingJob 
-
-To get the Flink-job started we need to give it some various meta data. In our example we use
+To get the Flink-Job started we need to give it some various meta data. In our example we use
 
  ```java
   String jobName = parameterTool.get("job-name", "KeyHashingJob");

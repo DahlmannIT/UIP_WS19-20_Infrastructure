@@ -73,7 +73,7 @@ This documentation describes the infrastructure of a scalable data streaming and
 
 ## 1 Getting started
 
-### 1.1 Introduction
+### <a name="introduction"></a> 1.1 Introduction
 
 This software builds a powerful insight-platform to persist, analyze and work with big-data streams.
 
@@ -81,7 +81,7 @@ The infrastructure consists of the distributed streaming-platform `Apache Kafka`
 
 
 
-### 1.2 Use Cases
+### <a name="use-cases"></a>1.2 Use Cases
 
 * As a data analyst, I want to have as much data as possible to have a good basis for analysis and prognosis.
 
@@ -89,13 +89,13 @@ The infrastructure consists of the distributed streaming-platform `Apache Kafka`
 
 * As a developer, I want to stream and persist live data from various data sources into a database to create a sufficient foundation for my colleagues to work on.
 
-### 1.3 Prerequisites
+### <a name="prerequisistes"></a> 1.3 Prerequisites
 
 * [JDK8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) has to be installed
 * [Docker](https://www.docker.com) has to be installed
 * [Docker-Compose](https://docs.docker.com/compose/install/) has to be installed
 
-### 1.4 Quick start
+### <a name="quick-start"></a>1.4 Quick start
 
 Perform the following two steps (required only once)
 
@@ -116,7 +116,7 @@ For destroying a cluster, type
    
 To get this platform started you have to move a file which has to be named `transaction_data.csv` into the `data` directory. This is necessary to deploy a connector. In order to deploy a connector you have to execute the `deploy-connector.sh` file with the terminal command `bash deploy connector.sh`. The command `./deploy-connector.sh` works as well. After you performed these two steps you can start a whole docker cluster in the terminal by navigating to the `docker-compose.yml` file. With the simple command `sudo docker-compose up` all containers will start. If the required docker images aren´t available on your machine, they will automatically be downloaded. With the command `sudo docker-compose down` the cluster will be destroyed.
 
-### 1.5 Installation Guide 
+### <a name="installation-guide"></a>1.5 Installation Guide 
 
 create a user called "kafka_connect" in postgres by accessing postgres with 
 `sudo docker exec -it postgres bash` then

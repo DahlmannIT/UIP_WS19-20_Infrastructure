@@ -2,7 +2,7 @@
 
 > You can fork this repository @ https://github.com/DahlmannIT/UIP_WS19-20_Infrastructure 
 
-This documentation describes the infrastructure of a scalable data streaming and processing platform, which gives the possibility to persist and analyze incoming data from various types and sources. 
+This documentation describes the infrastructure of a scalable data streaming and processing platform, which gives the possibility to persist and analyze incoming data from various data types and sources. 
 
 ### Table of Contents
 * 1 [Getting started](#getting-started)

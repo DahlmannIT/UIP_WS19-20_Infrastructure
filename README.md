@@ -363,6 +363,9 @@ See [Apache Zeppelin Documentation](https://zeppelin.apache.org/docs/0.7.0/insta
 
 #### 4.2.6 Jobmanager
 
+This is the master-node of Apache Flink. You can deploy Flink-Jobs to this container. 
+See [Apache Flink Documentation](https://ci.apache.org/projects/flink/flink-docs-stable/) for more details.
+
 #### 4.2.7 Taskmanager
 
 The Taskmanager is an image of Apache Flink, which use is to process Kafkas incoming data. 
@@ -370,7 +373,11 @@ Please refer to [Apache Flink Documentation](https://ci.apache.org/projects/flin
 
 #### 4.2.8 Prometheus
 
+To get a list of possible Prometheus Environment Variables, see [Prometheus Documentation](https://prometheus.io/docs/introduction/overview/).
+
 #### 4.2.9 Grafana
+
+As for Grafana, see [Grafana Documentation](https://grafana.com/docs/grafana/latest/installation/docker/).
 
 ### 4.3  Connectors
 
@@ -514,9 +521,10 @@ After that the resulting JSON will be converted to string and written to the out
 
 ## 6. Troubleshooting
 
-* user "kafka_connect" existiert nicht? selbst erstellen in der postgres bash!
+* If user `kafka_connect` doesn't exist in PostgreSQL, make sure to check `/.docker-volumes/postgres-init/init.sql` or create an user yourself.
 
-* Tabellen werden in PostgreSQL nicht erstellt, auch wenn alle Scripts ausgeführt wurden? 5 Minuten warten!
+* If there are no tables being created in PostgreSQL, get your Flink-Job running, re-deploy all connectors with a valid schema in the `data` folder and wait for about 5 minutes. (You can delete them by using `curl -X DELETE http://localhost:8083/connectors/<name_connector>`).
 
-* Worker laufen in Kafka-Connect nicht? Datei mit Schema in Data-Folder schieben und connector neu deployen (vorher jeweiligen Connector löschen). mit `curl -X DELETE http://localhost:8083/connectors/<name_connector>`
+* If there is no worker running on your Kafka-Connect node, copy a valid schema in the `data` folder and re-deploy your connectors. (You can delete them by using `curl -X DELETE http://localhost:8083/connectors/<name_connector>`).
+
 

@@ -6,15 +6,15 @@ This documentation describes the infrastructure of a scalable data streaming and
 
 1 [Getting started](#getting-started)
 
-1.1 [Introduction](#introduction)
+	1.1 [Introduction](#introduction)
 
-1.2 [Use Cases](#use-cases)
+	1.2 [Use Cases](#use-cases)
 
-1.3 [Prerequisites](#prerequisites)
+	1.3 [Prerequisites](#prerequisites)
 
-1.4 [Quick start](#quick-start)
+	1.4 [Quick start](#quick-start)
 
-1.5 [Installation Guide](#installation-guide)
+	1.5 [Installation Guide](#installation-guide)
 
 2 [Frameworks](#frameworks)
 

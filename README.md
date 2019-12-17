@@ -111,23 +111,14 @@ For adding a new data source, you have to take the following steps. Initially yo
 
 To persist the data in the database you need a `PRIMARY KEY` for the data. Our stream processing framework Flink is used for this purpose. You need to deploy the existing Flink job `KeyHashingJob.jar` to generate primary keys for all your data in order to persist them. If your original data source writes to the `Input`-topic in Kafka, you have to deploy the `KeyHashingJob.jar` (see next step) in which case the InputTopic should be named `Input` and OutputTopic should be named `Input_persist`. You can also configure those variables in the Flinkjob.
 
-To make your own Flinkjob, check 
+To make your own Flinkjob, check [Flink Hashing Job](https://github.com/DahlmannIT/UIP_WS19-20_Infrastructure/tree/master/Flink%20Hashing%20Job) for an example.
 
-neuen Flink job deployen über "flink-example" branch "HashingJob" und dort die Parameter ändern - für output-topic ein "_persist" hinzufügen. dann dort in der umgebungs-console: "gradle clean shadowJar" eine .jar erzeugen (/gradle/lib) und diese als Flinkjob verwenden
 
-### 3.3  Deploying Flink-job
+### 3.3  Deploying Flink-Job
  
-* `localhost:8081`
 
-* Submit new Job -> upload & start jar
-
-//* Type in field "Program Arguments" "--input-topic transaction_data" and submit
-
-  * Flink-examples in Jonathan Github
-
-* Entwickler entscheidet in JAR ob aus Postgres gelesen wird und wo es gespeichert wird (Postgres, ElasticSearch)
-
-To deploy the Flink job you have to go to `localhost:8081` where the Flink GUI is accessible. Click the `Submit new Job`-button to upload and start the `KeyHashingJob.jar`. See the Flink examples below.
+To deploy the Flink-Job you have to go to `localhost:8081` where the Flink GUI is accessible. Click the `Submit new Job`-button to upload and start the `KeyHashingJob.jar`. See the Flink examples below for a more detailed view of Flink-Jobs.
+If you can't access the Flink GUI, you can also deploy a Job in the Flink-Bash (called Jobmanager): `./bin/flink run <directory/name.jar>`.
 
 ### 3.4 Accessing PostgreSQL
 
@@ -182,14 +173,14 @@ Again, don´t forget the `;`.
 
 * monitoring container-status, based on Prometheus
 
-* `localhost:3000`
+* go to `localhost:3000`
 
   ``` 
   user: admin
   password: password
   ```
 
-* Home -> Kafka-Overview
+* check out Home -> Kafka-Overview
 
 ### 3.7 Raw monitoring with Prometheus
 
@@ -354,6 +345,7 @@ Please refer to [Confluent Documentation](https://docs.confluent.io/current/inst
 #### 4.2.2 Kafka
 
 The Kafka image uses variables prefixed with `KAFKA_`. 
+See [Confluent Documentation](https://docs.confluent.io/current/installation/docker/config-reference.html).
 
 #### 4.2.3 Kafka-Connect
 
@@ -361,10 +353,13 @@ Kafka Connect is used for connecting various datatypes and schemas with Kafka. T
 
 #### 4.2.4 PostgreSQL
 
-Die PostgreSQL database wird verwendet um gereinigte Rohdaten sowie schon analysierte Daten und Ergebnisse zu persistieren.
+The PostgreSQL database is used to persist analyzed and cleaned raw data and results.
 Please refer to [PostgreSQL Documentation](https://www.postgresql.org/docs/) for more details. 
 
 #### 4.2.5 Zeppelin
+
+For configuring Zeppelin, make sure to expose port 8080 and overwrite the necessary volumes.
+See [Apache Zeppelin Documentation](https://zeppelin.apache.org/docs/0.7.0/install/docker.html) for a detailed view.
 
 #### 4.2.6 Jobmanager
 
